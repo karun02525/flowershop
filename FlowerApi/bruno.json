@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "FlowerApi",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

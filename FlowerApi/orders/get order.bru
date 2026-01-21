@@ -1,0 +1,19 @@
+meta {
+  name: get order
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8080/api/orders?userId=6970c129e841619e64d044cf
+  body: none
+  auth: inherit
+}
+
+params:query {
+  userId: 6970c129e841619e64d044cf
+}
+
+settings {
+  encodeUrl: true
+}
