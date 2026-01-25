@@ -6,8 +6,20 @@ meta {
 
 post {
   url: http://localhost:8080/api/users
-  body: none
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+    "firstName": "Karun",
+    "lastName": "Kumar",
+    "email": "karunkumar02525@gmail.com",
+    "mobile": "9876543210",
+    "address": "123 Main Street, Pune, Maharashtra, India",
+    "gender": "Male",
+    "dob": "1995-05-15"
+  }
 }
 
 settings {

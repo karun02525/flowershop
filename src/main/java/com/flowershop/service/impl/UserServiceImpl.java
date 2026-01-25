@@ -18,6 +18,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User registerUser(User user) {
+        if (!validateUserData(user.getFirstName())) {
+            throw new RuntimeException("Invalid user data");
+        }
+        // Automatically set the creation timestamp
+        user.setCreatedAtNow();
         return userRepository.save(user);
     }
 
@@ -31,4 +36,14 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
+
+    @Override
+    public void deleteUser(String userId) {
+         userRepository.deleteById(userId);
+    }
+
+    private boolean validateUserData(String name) {
+        return name !=null && !name.isEmpty();
+    }
+
 }
