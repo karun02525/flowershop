@@ -34,6 +34,14 @@ public class User {
     @Pattern(regexp = "^[0-9]{10}$", message = "Mobile number must be 10 digits")
     private String mobile;
 
+    @NotBlank(message = "Password is required")
+    @Size(min = 8, max = 100, message = "Password must be between 8 and 100 characters")
+    @Pattern(
+            regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,100}$",
+            message = "Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 digit, and 1 special character"
+    )
+    private String password;
+
     @NotBlank(message = "Address is required")
     @Size(min = 10, max = 200, message = "Address must be between 10 and 200 characters")
     private String address;
